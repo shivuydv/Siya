@@ -1,0 +1,32 @@
+{
+  "id": "/",
+  "name": "Siya 2 AI Studio",
+  "short_name": "Siya 2",
+  "description": "Siya 2 - A sassy, witty, and intelligent Indian female AI voice assistant, created by Shivam Yadav in AI Studio.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#050505",
+  "background_color": "#050505",
+  "icons": [
+    {
+      "src": "/assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

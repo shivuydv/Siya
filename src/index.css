@@ -1,0 +1,540 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Rajdhani", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Share Tech Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+html, body, #root {
+  min-height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #02080b;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* TV & Large Display Overscan & Remote Navigation safe area */
+@media (min-width: 1920px) {
+  :root {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 2560px) {
+  :root {
+    font-size: 22px;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* SIYA Authentication Page Styles */
+.siya-auth-bg {
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 12px;
+  background:
+    radial-gradient(circle at 20% 20%, #5b21b6 0%, transparent 35%),
+    radial-gradient(circle at 80% 80%, #be185d 0%, transparent 35%),
+    linear-gradient(135deg, #070713, #110b24, #080811);
+  color: white;
+  position: relative;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Background glow */
+.siya-glow {
+  position: fixed;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: .35;
+  animation: siyaFloat 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.siya-glow.one {
+  background: #8b5cf6;
+  top: -80px;
+  left: -80px;
+}
+
+.siya-glow.two {
+  background: #ec4899;
+  right: -80px;
+  bottom: -80px;
+  animation-delay: 2s;
+}
+
+@keyframes siyaFloat {
+  from { transform: translate(0, 0) scale(1); }
+  to { transform: translate(30px, -20px) scale(1.15); }
+}
+
+/* Particles */
+.siya-particle {
+  position: fixed;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  opacity: .5;
+  animation: siyaRise linear infinite;
+  pointer-events: none;
+}
+
+@keyframes siyaRise {
+  from {
+    transform: translateY(110vh);
+    opacity: 0;
+  }
+  20% { opacity: .6; }
+  80% { opacity: .4; }
+  to {
+    transform: translateY(-10vh);
+    opacity: 0;
+  }
+}
+
+/* Main card */
+.siya-login-card {
+  width: min(92%, 420px);
+  padding: 38px 30px 30px;
+  border: 1px solid rgba(255, 255, 255, .15);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, .075);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, .45),
+    inset 0 1px rgba(255, 255, 255, .12);
+  position: relative;
+  z-index: 5;
+  animation: siyaCardIn .8s cubic-bezier(.2, .8, .2, 1);
+}
+
+@keyframes siyaCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Logo */
+.siya-logo {
+  width: 76px;
+  height: 76px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 24px;
+  font-size: 29px;
+  font-weight: 800;
+  letter-spacing: -2px;
+  background: linear-gradient(135deg, #a78bfa, #ec4899);
+  box-shadow:
+    0 0 35px rgba(167, 139, 250, .45),
+    inset 0 1px rgba(255, 255, 255, .45);
+  animation: siyaLogoGlow 3s ease-in-out infinite;
+  user-select: none;
+}
+
+@keyframes siyaLogoGlow {
+  50% {
+    box-shadow:
+      0 0 55px rgba(236, 72, 153, .55),
+      inset 0 1px rgba(255, 255, 255, .45);
+  }
+}
+
+.siya-login-card h1 {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 31px;
+  letter-spacing: -1px;
+  font-weight: 700;
+}
+
+.siya-subtitle {
+  text-align: center;
+  color: rgba(255, 255, 255, .62);
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* Form */
+.siya-form {
+  margin-top: 30px;
+}
+
+.siya-input-box {
+  position: relative;
+  margin-bottom: 17px;
+}
+
+.siya-input-box input {
+  width: 100%;
+  height: 57px;
+  border: none;
+  outline: none;
+  border-radius: 17px;
+  padding: 0 48px 0 18px;
+  color: white;
+  font-size: 15px;
+  background: rgba(255, 255, 255, .075);
+  border: 1px solid rgba(255, 255, 255, .10);
+  transition: .25s;
+}
+
+.siya-input-box input::placeholder {
+  color: rgba(255, 255, 255, .4);
+}
+
+.siya-input-box input:focus {
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 4px rgba(167, 139, 250, .10);
+  background: rgba(255, 255, 255, .10);
+}
+
+.siya-icon {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  opacity: .55;
+  font-size: 19px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.siya-password-toggle {
+  cursor: pointer;
+  transition: opacity .2s;
+}
+
+.siya-password-toggle:hover {
+  opacity: 1;
+}
+
+/* Options */
+.siya-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3px 3px 22px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, .58);
+}
+
+.siya-remember {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.siya-remember input {
+  accent-color: #a78bfa;
+  cursor: pointer;
+}
+
+.siya-forgot {
+  color: #c4b5fd;
+  cursor: pointer;
+  transition: color .2s;
+}
+
+.siya-forgot:hover {
+  color: #e9d5ff;
+}
+
+/* Login button */
+.siya-login-btn {
+  width: 100%;
+  height: 57px;
+  border: none;
+  border-radius: 17px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  box-shadow: 0 12px 30px rgba(139, 92, 246, .28);
+  transition: .25s;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.siya-login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 17px 35px rgba(236, 72, 153, .32);
+}
+
+.siya-login-btn:active {
+  transform: scale(.98);
+}
+
+.siya-login-btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.siya-login-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, .35),
+    transparent
+  );
+  transform: skewX(-20deg);
+  transition: .6s;
+}
+
+.siya-login-btn:hover::before {
+  left: 130%;
+}
+
+/* Divider */
+.siya-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0;
+  color: rgba(255, 255, 255, .35);
+  font-size: 12px;
+}
+
+.siya-divider span {
+  height: 1px;
+  flex: 1;
+  background: rgba(255, 255, 255, .12);
+}
+
+/* Social */
+.siya-social {
+  display: flex;
+  gap: 12px;
+}
+
+.siya-social button {
+  flex: 1;
+  height: 50px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, .10);
+  background: rgba(255, 255, 255, .06);
+  color: white;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 500;
+  transition: .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.siya-social button:hover {
+  background: rgba(255, 255, 255, .11);
+  transform: translateY(-2px);
+}
+
+.siya-social button:active {
+  transform: scale(.98);
+}
+
+/* Signup */
+.siya-signup {
+  text-align: center;
+  margin-top: 25px;
+  color: rgba(255, 255, 255, .52);
+  font-size: 13px;
+}
+
+.siya-signup span {
+  color: #d8b4fe;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color .2s;
+}
+
+.siya-signup span:hover {
+  color: #f3e8ff;
+  text-decoration: underline;
+}
+
+/* Footer */
+.siya-footer {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, .25);
+  letter-spacing: .5px;
+}
+
+/* Success screen */
+.siya-success {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, #29134c, #080811 65%);
+}
+
+.siya-success.show {
+  display: flex;
+  animation: siyaFade .5s ease forwards;
+}
+
+.siya-success-box {
+  text-align: center;
+  padding: 40px;
+  animation: siyaSuccessIn .7s ease forwards;
+}
+
+.siya-check {
+  width: 90px;
+  height: 90px;
+  margin: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  box-shadow: 0 0 60px rgba(236, 72, 153, .45);
+}
+
+.siya-success h2 {
+  margin-top: 24px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.siya-success p {
+  margin-top: 8px;
+  color: rgba(255, 255, 255, .6);
+}
+
+@keyframes siyaFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes siyaSuccessIn {
+  from {
+    opacity: 0;
+    transform: scale(.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile & Small Screen Adaptation */
+@media (max-width: 480px) {
+  .siya-login-card {
+    width: 100%;
+    max-width: 360px;
+    padding: 24px 18px 20px;
+    border-radius: 24px;
+    margin: auto;
+  }
+
+  .siya-login-card h1 {
+    font-size: 24px;
+  }
+
+  .siya-input-box input {
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .siya-login-btn {
+    height: 50px;
+    font-size: 15px;
+  }
+}
+
+/* Very Small Mobile (e.g. 320px - 360px iPhone SE, JioPhone) */
+@media (max-width: 360px) {
+  .siya-login-card {
+    padding: 18px 14px 16px;
+    border-radius: 18px;
+  }
+
+  .siya-logo {
+    width: 60px;
+    height: 60px;
+    font-size: 22px;
+  }
+
+  .siya-login-card h1 {
+    font-size: 21px;
+    margin-top: 14px;
+  }
+
+  .siya-input-box input {
+    height: 46px;
+    padding: 0 40px 0 14px;
+  }
+
+  .siya-icon {
+    right: 14px;
+    top: 14px;
+    font-size: 16px;
+  }
+}
+
+/* Smart TV & Large 4K/1080p Screen Focus Navigation */
+@media (min-width: 1440px) {
+  .siya-login-card {
+    max-width: 460px;
+    padding: 44px 36px 36px;
+  }
+}
+
+/* TV Remote D-Pad Focus Ring */
+button:focus-visible,
+input:focus-visible,
+a:focus-visible {
+  outline: 3px solid #a855f7 !important;
+  outline-offset: 3px !important;
+}

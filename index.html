@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
+    <title>Siya</title>
+    <meta name="description" content="An advanced virtual AI assistant with multi-tier subscription capabilities (Free, Pro, Pro Max, and Ultra), created by Shivam Yadav." />
+    <meta property="og:title" content="Siya" />
+    <meta property="og:description" content="An advanced virtual AI assistant with multi-tier subscription capabilities (Free, Pro, Pro Max, and Ultra), created by Shivam Yadav." />
+    <meta property="og:url" content="https://ais-pre-uic4i5jbpwftrpf34u36mn-796492347098.asia-southeast1.run.app" />
+    <link rel="canonical" href="https://ais-pre-uic4i5jbpwftrpf34u36mn-796492347098.asia-southeast1.run.app" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="/assets/icon-192.png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <meta name="theme-color" content="#050505" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Siya 2 AI Studio" />
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script>
+      // Clear any previous stale service workers or caches that cause blank screen
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for (var i = 0; i < registrations.length; i++) {
+            registrations[i].unregister();
+          }
+        });
+      }
+      if (window.caches) {
+        caches.keys().then(function(names) {
+          for (var i = 0; i < names.length; i++) {
+            caches.delete(names[i]);
+          }
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
